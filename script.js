@@ -1,48 +1,88 @@
 document.addEventListener('DOMContentLoaded',()=>{
   if(window.lucide)lucide.createIcons();
 
-  const T={
-    en:{},
-    hi:{
-      'Home':'होम','Properties':'प्रॉपर्टीज़','Neighborhoods':'इलाके','Agents':'एजेंट्स','Sell With Us':'हमारे साथ बेचें','About Us':'हमारे बारे में','Blog':'ब्लॉग','Contact':'संपर्क','Book a Call':'कॉल बुक करें','Exceptional Real Estate':'विशेष रियल एस्टेट','Find a place':'ऐसी जगह खोजें','worth calling home.':'जिसे घर कह सकें।','Discover exceptional properties, distinguished neighborhoods, and a real estate experience designed around you.':'बेहतरीन प्रॉपर्टीज़, शानदार इलाकों और आपकी जरूरत के अनुसार रियल एस्टेट अनुभव की खोज करें।','View Properties':'प्रॉपर्टीज़ देखें','Talk to Agent':'एजेंट से बात करें','Scroll to explore':'आगे देखने के लिए स्क्रॉल करें','About Novalux':'नोवालक्स के बारे में','Real estate,':'रियल एस्टेट,','redefined.':'नए अंदाज़ में।','We believe buying or selling a home should feel as exceptional as the property itself.':'हम मानते हैं कि घर खरीदना या बेचना खुद प्रॉपर्टी जितना ही शानदार अनुभव होना चाहिए।','Novalux is a boutique luxury real estate firm focused on creating meaningful connections between people and remarkable places. Our local expertise and personalized approach ensure every client receives exceptional service from first conversation to closing day.':'नोवालक्स एक बुटीक लग्ज़री रियल एस्टेट फर्म है जो लोगों और शानदार जगहों के बीच सार्थक संबंध बनाने पर केंद्रित है। हमारी स्थानीय विशेषज्ञता और व्यक्तिगत सेवा हर ग्राहक को पहली बातचीत से क्लोज़िंग डे तक बेहतरीन अनुभव देती है।','Discover our story':'हमारी कहानी जानें','Properties Sold':'बेची गई प्रॉपर्टीज़','Happy Clients':'खुश ग्राहक','Years Experience':'वर्षों का अनुभव','Curated Collection':'चुनिंदा संग्रह','Featured':'विशेष','properties.':'प्रॉपर्टीज़।','View all properties':'सभी प्रॉपर्टीज़ देखें','Search properties...':'प्रॉपर्टीज़ खोजें...','Status':'स्थिति','All Status':'सभी स्थिति','For Sale':'बिक्री के लिए','For Rent':'किराए के लिए','Property type':'प्रॉपर्टी प्रकार','All Types':'सभी प्रकार','Villa':'विला','Apartment':'अपार्टमेंट','Penthouse':'पेंटहाउस','Location':'स्थान','All Locations':'सभी स्थान','Price range':'कीमत सीमा','Any Price':'कोई भी कीमत','Under $1M':'$1M से कम','$1M–$3M':'$1M–$3M','$3M–$5M':'$3M–$5M','$5M+':'$5M+','Save property':'प्रॉपर्टी सेव करें','Beds':'बेडरूम','Baths':'बाथरूम','View Details':'विवरण देखें','No properties match your filters.':'आपके फ़िल्टर से कोई प्रॉपर्टी मेल नहीं खाती।','Explore Locations':'स्थान देखें','Live somewhere':'ऐसी जगह रहें','extraordinary.':'जो असाधारण हो।','Coastal luxury & vibrant living':'समुद्री लग्ज़री और जीवंत जीवन','Iconic urban living':'शानदार शहरी जीवन','Miami':'मियामी','New York':'न्यूयॉर्क','Los Angeles':'लॉस एंजेलिस','Malibu':'मालिबू','Our Agents':'हमारे एजेंट्स','Meet the experts':'विशेषज्ञों से मिलें','Sell With Novalux':'नोवालक्स के साथ बेचें','Your property deserves':'आपकी प्रॉपर्टी की हकदार है','exceptional representation.':'बेहतरीन प्रतिनिधित्व की।','Testimonials':'ग्राहक अनुभव','What our clients say':'हमारे ग्राहक क्या कहते हैं','Frequently Asked Questions':'अक्सर पूछे जाने वाले सवाल','Get in touch':'संपर्क करें','Let’s find your next home.':'आइए आपका अगला घर खोजें।','Send Message':'संदेश भेजें','First Name':'पहला नाम','Last Name':'अंतिम नाम','Email':'ईमेल','Phone':'फ़ोन','Message':'संदेश','Submit':'सबमिट करें','Follow us':'हमें फॉलो करें','All rights reserved.':'सर्वाधिकार सुरक्षित।','Privacy Policy':'गोपनीयता नीति','Terms of Service':'सेवा की शर्तें','Years of':'वर्षों की','excellence':'उत्कृष्टता','Luxury modern villa':'लग्ज़री आधुनिक विला','Luxury property':'लग्ज़री प्रॉपर्टी','Luxury home interior':'लग्ज़री घर का इंटीरियर','The Palm Residence':'द पाम रेजिडेंस','Skyline Penthouse':'स्काईलाइन पेंटहाउस','The Laurel Residence':'द लॉरेल रेजिडेंस','Oceanview Estate':'ओशनव्यू एस्टेट','Azure Residence':'एज़्योर रेजिडेंस','The Meridian Penthouse':'द मेरिडियन पेंटहाउस','Coastal luxury & vibrant living':'समुद्री लग्ज़री और जीवंत जीवन','Iconic urban living':'प्रतिष्ठित शहरी जीवन','For Sale':'बिक्री के लिए','For Rent':'किराए के लिए'},
-    ar:{
-      'Home':'الرئيسية','Properties':'العقارات','Neighborhoods':'الأحياء','Agents':'الوكلاء','Sell With Us':'بع معنا','About Us':'من نحن','Blog':'المدونة','Contact':'اتصل بنا','Book a Call':'احجز مكالمة','Exceptional Real Estate':'عقارات استثنائية','Find a place':'اعثر على مكان','worth calling home.':'يستحق أن تسميه منزلاً.','Discover exceptional properties, distinguished neighborhoods, and a real estate experience designed around you.':'اكتشف عقارات مميزة وأحياء راقية وتجربة عقارية مصممة حول احتياجاتك.','View Properties':'عرض العقارات','Talk to Agent':'تحدث إلى وكيل','Scroll to explore':'مرر للاستكشاف','About Novalux':'عن نوفالوكس','Real estate,':'العقارات،','redefined.':'بمفهوم جديد.','We believe buying or selling a home should feel as exceptional as the property itself.':'نؤمن أن شراء أو بيع المنزل يجب أن يكون تجربة استثنائية مثل العقار نفسه.','Novalux is a boutique luxury real estate firm focused on creating meaningful connections between people and remarkable places. Our local expertise and personalized approach ensure every client receives exceptional service from first conversation to closing day.':'نوفالوكس شركة عقارات فاخرة متخصصة في بناء روابط مميزة بين الناس والأماكن الاستثنائية. خبرتنا المحلية ونهجنا الشخصي يضمنان خدمة راقية لكل عميل من أول محادثة حتى إتمام الصفقة.','Discover our story':'اكتشف قصتنا','Properties Sold':'العقارات المباعة','Happy Clients':'عملاء سعداء','Years Experience':'سنوات من الخبرة','Curated Collection':'مجموعة مختارة','Featured':'عقارات','properties.':'مميزة.','View all properties':'عرض جميع العقارات','Search properties...':'ابحث عن العقارات...','All Status':'كل الحالات','For Sale':'للبيع','For Rent':'للإيجار','All Types':'كل الأنواع','Villa':'فيلا','Apartment':'شقة','Penthouse':'بنتهاوس','All Locations':'كل المواقع','Any Price':'أي سعر','Under $1M':'أقل من مليون دولار','$1M–$3M':'من مليون إلى 3 ملايين دولار','$3M–$5M':'من 3 إلى 5 ملايين دولار','$5M+':'أكثر من 5 ملايين دولار','Save property':'حفظ العقار','Beds':'غرف نوم','Baths':'حمامات','View Details':'عرض التفاصيل','No properties match your filters.':'لا توجد عقارات تطابق عوامل التصفية.','Explore Locations':'استكشف المواقع','Live somewhere':'عش في مكان','extraordinary.':'استثنائي.','Coastal luxury & vibrant living':'فخامة ساحلية وحياة نابضة','Iconic urban living':'حياة حضرية مميزة','Our Agents':'وكلاؤنا','Meet the experts':'تعرّف على خبرائنا','Sell With Novalux':'بع مع نوفالوكس','Your property deserves':'عقارك يستحق','exceptional representation.':'تمثيلاً استثنائياً.','Testimonials':'آراء العملاء','What our clients say':'ماذا يقول عملاؤنا','Frequently Asked Questions':'الأسئلة الشائعة','Get in touch':'تواصل معنا','Let’s find your next home.':'لنجد منزلك القادم.','Send Message':'إرسال الرسالة','First Name':'الاسم الأول','Last Name':'اسم العائلة','Email':'البريد الإلكتروني','Phone':'الهاتف','Message':'الرسالة','Submit':'إرسال','Follow us':'تابعنا','All rights reserved.':'جميع الحقوق محفوظة.','Privacy Policy':'سياسة الخصوصية','Terms of Service':'شروط الخدمة','Years of':'سنوات من','excellence':'التميز','Luxury modern villa':'فيلا عصرية فاخرة','Luxury property':'عقار فاخر','Luxury home interior':'تصميم داخلي فاخر','The Palm Residence':'ذا بالم ريزيدنس','Skyline Penthouse':'سكاي لاين بنتهاوس','The Laurel Residence':'ذا لوريل ريزيدنس','Oceanview Estate':'أوشن فيو إستيت','Azure Residence':'أزور ريزيدنس','The Meridian Penthouse':'ميريديان بنتهاوس','Miami':'ميامي','New York':'نيويورك','Los Angeles':'لوس أنجلوس','Malibu':'ماليبو'}
+  // Full-page multilingual selector: Google Translate translates the complete
+  // visible DOM instead of maintaining partial phrase dictionaries.
+  const LANGS={
+    en:'English',zh-CN:'中文',hi:'हिन्दी',es:'Español',fr:'Français',ar:'العربية',bn:'বাংলা',pt:'Português',ru:'Русский',ur:'اردو',id:'Bahasa Indonesia',de:'Deutsch',ja:'日本語',it:'Italiano',pl:'Polski'
+  };
+  const saved=localStorage.getItem('novalux-language')||'en';
+
+  const setGoogleLanguage=(lang)=>{
+    localStorage.setItem('novalux-language',lang);
+    document.documentElement.lang=lang;
+    document.documentElement.dir=(lang==='ar'||lang==='ur')?'rtl':'ltr';
+    document.body.classList.toggle('rtl-language',lang==='ar'||lang==='ur');
+    const combo=document.querySelector('.goog-te-combo');
+    if(combo&&combo.value!==lang){combo.value=lang;combo.dispatchEvent(new Event('change'));}
   };
 
-  const originalTexts=new Map();
-  const remember=el=>{if(!originalTexts.has(el))originalTexts.set(el,el.textContent)};
-  document.querySelectorAll('body *').forEach(el=>{if(el.children.length===0&&el.textContent.trim())remember(el)});
-  document.querySelectorAll('input[placeholder],select[aria-label],button[aria-label],img[alt]').forEach(el=>{if(el.placeholder)el.dataset.i18nPlaceholder=el.placeholder;if(el.getAttribute('aria-label'))el.dataset.i18nAria=el.getAttribute('aria-label');if(el.alt)el.dataset.i18nAlt=el.alt});
+  window.googleTranslateElementInit=()=>{
+    if(window.google?.translate?.TranslateElement){
+      new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:Object.keys(LANGS).join(','),autoDisplay:false,multilanguagePage:true},'google_translate_element');
+      setTimeout(()=>setGoogleLanguage(saved),250);
+    }
+  };
 
-  const translate=(lang)=>{
-    const dict=T[lang]||T.en;
-    document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.body.classList.toggle('rtl-language',lang==='ar');
-    originalTexts.forEach((value,el)=>{const translated=dict[value];if(translated)el.textContent=translated;else el.textContent=value});
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>el.placeholder=dict[el.dataset.i18nPlaceholder]||el.dataset.i18nPlaceholder);
-    document.querySelectorAll('[data-i18n-aria]').forEach(el=>el.setAttribute('aria-label',dict[el.dataset.i18nAria]||el.dataset.i18nAria));
-    document.querySelectorAll('[data-i18n-alt]').forEach(el=>el.alt=dict[el.dataset.i18nAlt]||el.dataset.i18nAlt);
-    localStorage.setItem('novalux-language',lang);
+  const loadGoogleTranslate=()=>{
+    if(document.getElementById('google-translate-script'))return;
+    const s=document.createElement('script');s.id='google-translate-script';s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';s.async=true;document.head.appendChild(s);
   };
 
   const headerInner=document.querySelector('.header-inner');
   if(headerInner&&!document.getElementById('language-selector')){
-    const wrap=document.createElement('div');wrap.className='language-selector-wrap';wrap.innerHTML='<label class="sr-only" for="language-selector">Language</label><span class="language-icon" aria-hidden="true">◎</span><select id="language-selector" aria-label="Language"><option value="en">EN</option><option value="hi">हिंदी</option><option value="ar">العربية</option></select>';
-    const toggle=document.getElementById('menu-toggle');if(toggle)headerInner.insertBefore(wrap,toggle);else headerInner.appendChild(wrap);
-    const select=wrap.querySelector('select');select.value=localStorage.getItem('novalux-language')||'en';select.addEventListener('change',e=>translate(e.target.value));translate(select.value);
+    const wrap=document.createElement('div');wrap.className='language-selector-wrap';
+    wrap.innerHTML='<label class="sr-only" for="language-selector">Language</label><span class="language-icon" aria-hidden="true">◎</span><select id="language-selector" aria-label="Language"></select>';
+    const select=wrap.querySelector('select');
+    Object.entries(LANGS).forEach(([code,name])=>{const o=document.createElement('option');o.value=code;o.textContent=name;select.appendChild(o)});
+    select.value=saved;
+    select.addEventListener('change',e=>setGoogleLanguage(e.target.value));
+    const menu=document.getElementById('menu-toggle');if(menu)headerInner.insertBefore(wrap,menu);else headerInner.appendChild(wrap);
   }
+  const hidden=document.createElement('div');hidden.id='google_translate_element';hidden.setAttribute('aria-hidden','true');hidden.style.cssText='position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;';document.body.appendChild(hidden);
+  loadGoogleTranslate();
 
-  const header=document.getElementById('site-header');const onScroll=()=>header?.classList.toggle('scrolled',scrollY>30);onScroll();addEventListener('scroll',onScroll,{passive:true});
+  // Sticky glass header
+  const header=document.getElementById('site-header');
+  const onScroll=()=>header&&header.classList.toggle('scrolled',window.scrollY>30);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Mobile menu
   const menuToggle=document.getElementById('menu-toggle'),mobileMenu=document.getElementById('mobile-menu');
   const closeMenu=()=>{mobileMenu?.classList.remove('open');document.body.classList.remove('menu-open');menuToggle?.setAttribute('aria-expanded','false')};
-  menuToggle?.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');document.body.classList.toggle('menu-open',open);menuToggle.setAttribute('aria-expanded',String(open))});mobileMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  menuToggle?.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');document.body.classList.toggle('menu-open',open);menuToggle.setAttribute('aria-expanded',String(open))});
+  mobileMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 
-  const counters=document.querySelectorAll('[data-counter]');const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,target=+el.dataset.counter,start=performance.now();const tick=now=>{const p=Math.min((now-start)/1200,1),ease=1-Math.pow(1-p,3);el.textContent=Math.floor(target*ease);if(p<1)requestAnimationFrame(tick);else el.textContent=target};requestAnimationFrame(tick);observer.unobserve(el)}),{threshold:.4});counters.forEach(c=>observer.observe(c));
+  // Animated counters
+  const counters=document.querySelectorAll('[data-counter]');
+  const counterObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    const el=entry.target,target=Number(el.dataset.counter),start=performance.now();
+    const tick=now=>{const p=Math.min((now-start)/1200,1),ease=1-Math.pow(1-p,3);el.textContent=Math.floor(target*ease);if(p<1)requestAnimationFrame(tick);else el.textContent=target};
+    requestAnimationFrame(tick);counterObserver.unobserve(el);
+  }),{threshold:.4});
+  counters.forEach(c=>counterObserver.observe(c));
 
-  const cards=[...document.querySelectorAll('.property-card')],search=document.getElementById('property-search'),status=document.getElementById('status-filter'),type=document.getElementById('type-filter'),location=document.getElementById('location-filter'),price=document.getElementById('price-filter'),empty=document.getElementById('empty-state');
-  const priceMatch=(v,f)=>{const n=+v;if(f==='under1m')return n<1e6;if(f==='1to3m')return n>=1e6&&n<=3e6;if(f==='3to5m')return n>3e6&&n<=5e6;if(f==='over5m')return n>5e6;return true};
-  const filter=()=>{const q=(search?.value||'').toLowerCase().trim();let visible=0;cards.forEach(card=>{const ok=(!q||card.textContent.toLowerCase().includes(q))&&(!status||status.value==='all'||card.dataset.status===status.value)&&(!type||type.value==='all'||card.dataset.type===type.value)&&(!location||location.value==='all'||card.dataset.location===location.value)&&priceMatch(card.dataset.price,price?.value||'all');card.hidden=!ok;if(ok)visible++});if(empty)empty.hidden=visible!==0};[search,status,type,location,price].forEach(el=>el?.addEventListener('input',filter));[status,type,location,price].forEach(el=>el?.addEventListener('change',filter));
-  document.querySelectorAll('.property-favorite').forEach(b=>b.addEventListener('click',()=>b.classList.toggle('saved')));
-  const testimonials=[...document.querySelectorAll('.testimonial')];let ti=0;const show=i=>{if(!testimonials.length)return;ti=(i+testimonials.length)%testimonials.length;testimonials.forEach((x,n)=>x.classList.toggle('active',n===ti))};document.getElementById('testimonial-prev')?.addEventListener('click',()=>show(ti-1));document.getElementById('testimonial-next')?.addEventListener('click',()=>show(ti+1));
-  document.querySelectorAll('.faq-question').forEach(b=>b.addEventListener('click',()=>{const item=b.closest('.faq-item'),open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-question')?.setAttribute('aria-expanded','false')});if(!open){item.classList.add('open');b.setAttribute('aria-expanded','true')}}));
-  addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+  // Property filtering
+  const cards=[...document.querySelectorAll('.property-card')];
+  const search=document.getElementById('property-search'),status=document.getElementById('status-filter'),type=document.getElementById('type-filter'),location=document.getElementById('location-filter'),price=document.getElementById('price-filter'),empty=document.getElementById('empty-state');
+  const priceMatch=(v,f)=>{const n=Number(v);if(f==='under1m')return n<1000000;if(f==='1to3m')return n>=1000000&&n<=3000000;if(f==='3to5m')return n>3000000&&n<=5000000;if(f==='over5m')return n>5000000;return true};
+  const filter=()=>{const q=(search?.value||'').trim().toLowerCase();let visible=0;cards.forEach(card=>{const ok=(!q||card.textContent.toLowerCase().includes(q))&&(status.value==='all'||card.dataset.status===status.value)&&(type.value==='all'||card.dataset.type===type.value)&&(location.value==='all'||card.dataset.location===location.value)&&priceMatch(card.dataset.price,price.value);card.hidden=!ok;if(ok)visible++});if(empty)empty.hidden=visible!==0};
+  [search,status,type,location,price].forEach(el=>el?.addEventListener('input',filter));[status,type,location,price].forEach(el=>el?.addEventListener('change',filter));
+
+  document.querySelectorAll('.property-favorite').forEach(button=>button.addEventListener('click',()=>button.classList.toggle('saved')));
+
+  // Testimonials
+  const testimonials=[...document.querySelectorAll('.testimonial')];let testimonialIndex=0;
+  const showTestimonial=index=>{if(!testimonials.length)return;testimonialIndex=(index+testimonials.length)%testimonials.length;testimonials.forEach((item,i)=>item.classList.toggle('active',i===testimonialIndex))};
+  document.getElementById('testimonial-prev')?.addEventListener('click',()=>showTestimonial(testimonialIndex-1));
+  document.getElementById('testimonial-next')?.addEventListener('click',()=>showTestimonial(testimonialIndex+1));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(button=>button.addEventListener('click',()=>{
+    const item=button.closest('.faq-item'),wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-question')?.setAttribute('aria-expanded','false')});
+    if(!wasOpen){item.classList.add('open');button.setAttribute('aria-expanded','true')}
+  }));
 });
