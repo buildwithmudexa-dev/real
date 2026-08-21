@@ -1,11 +1,8 @@
 document.addEventListener('DOMContentLoaded',()=>{
   if(window.lucide)lucide.createIcons();
 
-  // Full-page multilingual selector: Google Translate translates the complete
-  // visible DOM instead of maintaining partial phrase dictionaries.
-  const LANGS={
-    en:'English',zh-CN:'中文',hi:'हिन्दी',es:'Español',fr:'Français',ar:'العربية',bn:'বাংলা',pt:'Português',ru:'Русский',ur:'اردو',id:'Bahasa Indonesia',de:'Deutsch',ja:'日本語',it:'Italiano',pl:'Polski'
-  };
+  // Full-page multilingual selector: English, Arabic and Urdu only.
+  const LANGS={en:'English',ar:'العربية',ur:'اردو'};
   const saved=localStorage.getItem('novalux-language')||'en';
 
   const setGoogleLanguage=(lang)=>{
@@ -19,7 +16,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   window.googleTranslateElementInit=()=>{
     if(window.google?.translate?.TranslateElement){
-      new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:Object.keys(LANGS).join(','),autoDisplay:false,multilanguagePage:true},'google_translate_element');
+      new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'ar,ur',autoDisplay:false,multilanguagePage:true},'google_translate_element');
       setTimeout(()=>setGoogleLanguage(saved),250);
     }
   };
@@ -35,7 +32,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     wrap.innerHTML='<label class="sr-only" for="language-selector">Language</label><span class="language-icon" aria-hidden="true">◎</span><select id="language-selector" aria-label="Language"></select>';
     const select=wrap.querySelector('select');
     Object.entries(LANGS).forEach(([code,name])=>{const o=document.createElement('option');o.value=code;o.textContent=name;select.appendChild(o)});
-    select.value=saved;
+    select.value=LANGS[saved]?saved:'en';
     select.addEventListener('change',e=>setGoogleLanguage(e.target.value));
     const menu=document.getElementById('menu-toggle');if(menu)headerInner.insertBefore(wrap,menu);else headerInner.appendChild(wrap);
   }
