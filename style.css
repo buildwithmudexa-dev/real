@@ -5,16 +5,8 @@
 .logo-mark{display:block;width:100%;height:100%;border:0;background:url("assets/sama-united-logo.svg") center left / contain no-repeat;font-size:0;letter-spacing:0}
 .logo-mark::before,.logo-mark::after{content:none}
 .logo>span:last-child{display:none}
-
-/* Footer uses the same transparent SAMA logo; no old text logo. */
 .sama-footer .container::before{content:"";display:block;width:205px;height:68px;margin:0 0 48px;background:url("assets/sama-united-logo.svg") left center / contain no-repeat}
-
-@media (max-width:600px){
-  .logo{width:148px;height:42px;flex-basis:148px}
-  .sama-footer .container::before{width:175px;height:58px;margin-bottom:38px}
-}
-
-/* Reference Header and Footer theme */
+@media (max-width:600px){.logo{width:148px;height:42px;flex-basis:148px}.sama-footer .container::before{width:175px;height:58px;margin-bottom:38px}}
 :root { --reference-navy: #021E38; --reference-outer: #081B2B; --reference-teal: #16B5AA; --reference-text: #D7E0EA; --reference-line: #21415A; }
 body { background: var(--reference-outer); }
 .site-header { position: relative; margin: 4px 8px 28px; border: 1px solid #E5E8EA; border-radius: 8px; background: #FEFEFE; box-shadow: none; }
@@ -42,28 +34,25 @@ body { background: var(--reference-outer); }
 .sama-footer .footer-bottom p { color: var(--reference-text); font-size: 1.05rem; }
 @media (max-width: 850px) { .header-inner { height: 190px; padding: 0 28px; } .logo { margin-top: 42px; width: 94px; height: 116px; flex-basis: 94px; } .navbar-controls { margin-top: 42px; } .footer-link-grid { grid-template-columns: 1fr 1fr; } .footer-brand-mark { grid-column: span 2; } .footer-contact-list { flex-wrap: wrap; justify-content: flex-start; } }
 @media (max-width: 600px) { .site-header { margin: 4px 4px 18px; } .header-inner { height: 140px; padding: 0 18px; } .logo { margin-top: 28px; width: 72px; height: 88px; flex-basis: 72px; } .navbar-controls { margin-top: 28px; gap: 3px; padding: 6px; } .navbar-icon-btn { width: 38px; height: 38px; } .navbar-icon-btn svg { width: 24px; height: 24px; } .sama-footer { margin: 0 4px 4px; } .sama-footer .container { width: min(calc(100% - 36px), 1300px); } .footer-link-grid { grid-template-columns: 1fr 1fr; gap: 32px 22px; padding-top: 28px; } .footer-brand-mark { width: 84px; height: 108px; } .footer-group h3, .footer-contact-block h3 { font-size: 1.25rem; } .footer-group a, .footer-contact-list a { font-size: .95rem; } .sama-footer .footer-bottom p { font-size: .85rem; text-align: center; } }
-
-/* Align the script-generated control capsule with the reference Header. */
 .nav-icon-card { min-width: 264px !important; width: 264px !important; height: 88px !important; margin: 70px 0 0 auto !important; padding: 12px !important; gap: 12px !important; border: 1px solid #E2E5E8 !important; border-radius: 16px !important; background: #FEFEFE !important; box-shadow: none !important; }
 .nav-icon-btn { width: 64px !important; height: 64px !important; min-width: 64px !important; border-radius: 10px !important; color: #334A5C !important; }
 .nav-icon-btn.language-btn { color: #1674D1 !important; }
 .nav-icon-btn svg { width: 34px !important; height: 34px !important; stroke-width: 1.8 !important; }
 @media (max-width: 850px) { .nav-icon-card { min-width: 216px !important; width: 216px !important; height: 72px !important; margin-top: 42px !important; gap: 6px !important; padding: 8px !important; } .nav-icon-btn { width: 50px !important; height: 50px !important; min-width: 50px !important; } .nav-icon-btn svg { width: 27px !important; height: 27px !important; } }
 @media (max-width: 600px) { .nav-icon-card { min-width: 156px !important; width: 156px !important; height: 52px !important; margin-top: 28px !important; gap: 2px !important; padding: 5px !important; } .nav-icon-btn { width: 38px !important; height: 38px !important; min-width: 38px !important; } .nav-icon-btn svg { width: 24px !important; height: 24px !important; } }
-
-/* Explicit SVG elements keep the shared mark visible across browsers. */
 .logo-mark { display: block; object-fit: contain; object-position: left center; background: none; }
 .footer-brand-mark { display: flex; align-items: center; }
 .footer-brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: left center; }
 
-/* Added real-estate imagery */
-.about-images .about-image-third{position:absolute;width:34%;height:210px;right:14%;top:42px;border:8px solid #fff;z-index:2;box-shadow:0 16px 35px rgba(0,0,0,.14)}
-.about-images .about-image-third img{width:100%;height:100%;object-fit:cover}
-.property-card.new-image-card .property-image{height:300px}
+/* 3 additional professional real-estate images */
+.about-images::after{content:"";position:absolute;width:34%;height:210px;right:14%;top:42px;border:8px solid #fff;z-index:2;background:url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=88") center/cover no-repeat;box-shadow:0 16px 35px rgba(0,0,0,.14)}
+.property-grid::before,.property-grid::after{content:"";display:block;min-height:300px;border:1px solid rgba(0,0,0,.06);background-size:cover;background-position:center;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.property-grid::before{background-image:url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=88")}
+.property-grid::after{background-image:url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=88")}
 
-/* Section directly above the footer: premium real-estate background + readable overlay */
-.contact-cta{position:relative;isolation:isolate;background-image:url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2400&q=88") !important;background-size:cover;background-position:center 55%;overflow:hidden}
+/* Premium background for the section directly above the footer */
+.contact-cta{position:relative;isolation:isolate;background-image:url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=88") !important;background-size:cover;background-position:center 55%;overflow:hidden}
 .contact-cta::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,30,56,.92),rgba(2,30,56,.72),rgba(2,30,56,.82));z-index:-1}
 .contact-cta-inner{position:relative;z-index:1}
-@media (max-width:850px){.about-images .about-image-third{width:40%;height:170px;right:8%;top:26px;border-width:6px}.contact-cta{background-position:center}}
-@media (max-width:600px){.about-images .about-image-third{width:43%;height:135px;right:3%;top:12px;border-width:5px}.property-card.new-image-card .property-image{height:280px}.contact-cta{padding:72px 0;background-position:center}}
+@media (max-width:850px){.about-images::after{width:40%;height:170px;right:8%;top:26px;border-width:6px}.property-grid::before,.property-grid::after{min-height:280px}.contact-cta{background-position:center}}
+@media (max-width:600px){.about-images::after{width:43%;height:135px;right:3%;top:12px;border-width:5px}.property-grid::before,.property-grid::after{min-height:280px}.contact-cta{padding:72px 0;background-position:center}}
