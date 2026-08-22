@@ -92,7 +92,25 @@ document.addEventListener('DOMContentLoaded',()=>{
   const closeMenu=()=>{mobileMenu?.classList.remove('open');document.body.classList.remove('menu-open');const b=document.getElementById('menu-control');if(b){b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Open menu');b.setAttribute('title','Menu');b.innerHTML='<i data-lucide="menu"></i>';if(window.lucide)lucide.createIcons()}};
   mobileMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 
-  const counters=document.querySelectorAll('[data-counter']);const counterObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;const el=entry.target,target=Number(el.dataset.counter),start=performance.now();const tick=now=>{const p=Math.min((now-start)/1200,1),ease=1-Math.pow(1-p,3);el.textContent=Math.floor(target*ease);if(p<1)requestAnimationFrame(tick);else el.textContent=target};requestAnimationFrame(tick);counterObserver.unobserve(el)}),{threshold:.4});counters.forEach(c=>counterObserver.observe(c));
+  const counters=document.querySelectorAll('[data-counter]');
+  const counterObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      const el=entry.target;
+      const target=Number(el.dataset.counter);
+      const start=performance.now();
+      const tick=now=>{
+        const p=Math.min((now-start)/1200,1);
+        const ease=1-Math.pow(1-p,3);
+        el.textContent=Math.floor(target*ease);
+        if(p<1)requestAnimationFrame(tick);
+        else el.textContent=target;
+      };
+      requestAnimationFrame(tick);
+      counterObserver.unobserve(el);
+    });
+  },{threshold:.4});
+  counters.forEach(c=>counterObserver.observe(c));
 
   const cards=[...document.querySelectorAll('.property-card')],search=document.getElementById('property-search'),status=document.getElementById('status-filter'),type=document.getElementById('type-filter'),location=document.getElementById('location-filter'),price=document.getElementById('price-filter'),empty=document.getElementById('empty-state');
   const priceMatch=(v,f)=>{const n=Number(v);if(f==='under1m')return n<1000000;if(f==='1to3m')return n>=1000000&&n<=3000000;if(f==='3to5m')return n>3000000&&n<=5000000;if(f==='over5m')return n>5000000;return true};

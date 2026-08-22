@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
-  <title id="title">SAMA United Real Estate Co logo</title>
-  <desc id="desc">Transparent SAMA logo with navy and teal angled marks and navy SAMA wordmark</desc>
-  <g transform="translate(24 24)">
-    <rect x="34" y="0" width="78" height="156" rx="12" transform="rotate(38 73 78)" fill="#25345D"/>
-    <rect x="58" y="128" width="78" height="156" rx="12" transform="rotate(38 97 206)" fill="#16B5AA"/>
-    <text x="205" y="214" fill="#25345D" font-family="Arial, Helvetica, sans-serif" font-size="178" font-weight="500" letter-spacing="-8">SAMA</text>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 300" role="img" aria-labelledby="title desc"><title id="title">SAMA United Real Estate Co symbol</title><desc id="desc">Navy and teal angled SAMA symbol</desc><rect x="34" y="0" width="78" height="156" rx="12" transform="rotate(38 73 78)" fill="#25345D"/><rect x="58" y="128" width="78" height="156" rx="12" transform="rotate(38 97 206)" fill="#16B5AA"/></svg>

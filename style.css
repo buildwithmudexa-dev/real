@@ -13,3 +13,48 @@
   .logo{width:148px;height:42px;flex-basis:148px}
   .sama-footer .container::before{width:175px;height:58px;margin-bottom:38px}
 }
+
+
+/* Reference Header and Footer theme */
+:root { --reference-navy: #021E38; --reference-outer: #081B2B; --reference-teal: #16B5AA; --reference-text: #D7E0EA; --reference-line: #21415A; }
+body { background: var(--reference-outer); }
+.site-header { position: relative; margin: 4px 8px 28px; border: 1px solid #E5E8EA; border-radius: 8px; background: #FEFEFE; box-shadow: none; }
+.header-inner { height: 270px; padding: 0 46px; align-items: flex-start; justify-content: space-between; }
+.logo { width: 126px; height: 154px; margin-top: 70px; flex: 0 0 126px; }
+.logo-mark { background-size: contain; background-position: left center; }
+.desktop-nav, .header-cta { display: none; }
+.navbar-controls { margin-top: 70px; margin-left: auto; gap: 12px; padding: 12px; border: 1px solid #E2E5E8; border-radius: 16px; background: #FEFEFE; box-shadow: none; }
+.navbar-icon-btn { width: 52px; height: 52px; background: transparent; box-shadow: none; color: #334A5C; }
+.navbar-icon-btn svg { width: 34px; height: 34px; stroke-width: 1.8; }
+.language-btn { color: #1674D1; }
+.menu-btn { display: grid; }
+.sama-footer { margin: 0 5px 4px; padding: 24px 0 28px; border: 1px solid var(--reference-line); border-radius: 10px; background: var(--reference-navy) !important; color: var(--reference-text) !important; }
+.sama-footer .container { width: min(calc(100% - 96px), 1300px); }
+.sama-footer .container::before { display: none; }
+.footer-link-grid { grid-template-columns: 205px repeat(4, 1fr); gap: 28px; padding: 50px 0 48px; }
+.footer-brand-mark { width: 120px; height: 155px; background: url("assets/sama-united-logo.svg") left center / contain no-repeat; }
+.footer-group h3, .footer-contact-block h3 { margin-bottom: 24px; color: var(--reference-teal); font-size: 1.5rem; }
+.footer-group a, .footer-contact-list a { color: var(--reference-text); font-size: 1.08rem; line-height: 1.35; margin-bottom: 16px; }
+.footer-contact-block { max-width: none; margin: 0; padding: 18px 0 24px; border-top: 1px solid var(--reference-line); border-bottom: 1px solid var(--reference-line); }
+.footer-contact-list { flex-direction: row; justify-content: space-between; gap: 24px; }
+.footer-contact-list a { display: flex; align-items: center; gap: 12px; margin: 0; }
+.footer-contact-list svg { color: var(--reference-text); width: 28px; height: 28px; }
+.sama-footer .footer-bottom { justify-content: center; padding-top: 24px; border-top: 0; }
+.sama-footer .footer-bottom p { color: var(--reference-text); font-size: 1.05rem; }
+@media (max-width: 850px) { .header-inner { height: 190px; padding: 0 28px; } .logo { margin-top: 42px; width: 94px; height: 116px; flex-basis: 94px; } .navbar-controls { margin-top: 42px; } .footer-link-grid { grid-template-columns: 1fr 1fr; } .footer-brand-mark { grid-column: span 2; } .footer-contact-list { flex-wrap: wrap; justify-content: flex-start; } }
+@media (max-width: 600px) { .site-header { margin: 4px 4px 18px; } .header-inner { height: 140px; padding: 0 18px; } .logo { margin-top: 28px; width: 72px; height: 88px; flex-basis: 72px; } .navbar-controls { margin-top: 28px; gap: 3px; padding: 6px; } .navbar-icon-btn { width: 38px; height: 38px; } .navbar-icon-btn svg { width: 24px; height: 24px; } .sama-footer { margin: 0 4px 4px; } .sama-footer .container { width: min(calc(100% - 36px), 1300px); } .footer-link-grid { grid-template-columns: 1fr 1fr; gap: 32px 22px; padding-top: 28px; } .footer-brand-mark { width: 84px; height: 108px; } .footer-group h3, .footer-contact-block h3 { font-size: 1.25rem; } .footer-group a, .footer-contact-list a { font-size: .95rem; } .sama-footer .footer-bottom p { font-size: .85rem; text-align: center; } }
+
+
+/* Align the script-generated control capsule with the reference Header. */
+.nav-icon-card { min-width: 264px !important; width: 264px !important; height: 88px !important; margin: 70px 0 0 auto !important; padding: 12px !important; gap: 12px !important; border: 1px solid #E2E5E8 !important; border-radius: 16px !important; background: #FEFEFE !important; box-shadow: none !important; }
+.nav-icon-btn { width: 64px !important; height: 64px !important; min-width: 64px !important; border-radius: 10px !important; color: #334A5C !important; }
+.nav-icon-btn.language-btn { color: #1674D1 !important; }
+.nav-icon-btn svg { width: 34px !important; height: 34px !important; stroke-width: 1.8 !important; }
+@media (max-width: 850px) { .nav-icon-card { min-width: 216px !important; width: 216px !important; height: 72px !important; margin-top: 42px !important; gap: 6px !important; padding: 8px !important; } .nav-icon-btn { width: 50px !important; height: 50px !important; min-width: 50px !important; } .nav-icon-btn svg { width: 27px !important; height: 27px !important; } }
+@media (max-width: 600px) { .nav-icon-card { min-width: 156px !important; width: 156px !important; height: 52px !important; margin-top: 28px !important; gap: 2px !important; padding: 5px !important; } .nav-icon-btn { width: 38px !important; height: 38px !important; min-width: 38px !important; } .nav-icon-btn svg { width: 24px !important; height: 24px !important; } }
+
+
+/* Explicit SVG elements keep the shared mark visible across browsers. */
+.logo-mark { display: block; object-fit: contain; object-position: left center; background: none; }
+.footer-brand-mark { display: flex; align-items: center; }
+.footer-brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: left center; }
