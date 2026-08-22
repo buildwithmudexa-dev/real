@@ -9,4 +9,19 @@ html[data-theme="dark"] body,html[data-theme="dark"] body *{color:#fff!important
 html[data-theme="dark"] .property-content p,html[data-theme="dark"] .property-meta,html[data-theme="dark"] .about-content p,html[data-theme="dark"] .stat span,html[data-theme="dark"] .agent-info p,html[data-theme="dark"] .eyebrow,html[data-theme="dark"] .property-type{color:#fff!important}
 html[data-theme="dark"] .btn-dark{color:#fff!important}
 html[data-theme="dark"] .location-details::before{color:#fff!important}
-@media(max-width:600px){.location-grid{padding-top:28px!important}.location-details{margin-bottom:24px!important}.location-details::before{width:46px!important;height:46px!important;font-size:26px!important;margin-bottom:16px!important}.location-map{height:430px!important}}
+
+/* Footer: six groups in a clean 2-column layout — two per row. */
+.sama-footer .container{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;column-gap:72px!important;row-gap:48px!important;align-items:start!important}
+.sama-footer .footer-link-grid{display:contents!important}
+.sama-footer .footer-brand-mark{grid-column:1/-1!important;padding-bottom:4px!important}
+.sama-footer .footer-brand-mark img{width:58px!important;height:auto!important;object-fit:contain!important}
+.sama-footer .footer-group{min-width:0!important}
+.sama-footer .footer-contact-block,.sama-footer .footer-hours-block{margin:0!important;max-width:none!important;min-width:0!important}
+.sama-footer .footer-hours-list{display:flex!important;flex-direction:column!important;gap:10px!important}
+.sama-footer .footer-hours-list div{display:flex!important;justify-content:space-between!important;gap:16px!important;font-size:.88rem!important}
+.sama-footer .footer-hours-list strong{font-weight:500!important;text-align:right!important}
+.sama-footer .footer-hours-status{margin-top:18px!important;font-size:.78rem!important;color:#b8c7cf!important}
+.sama-footer .footer-bottom{grid-column:1/-1!important;width:100%!important;margin-top:0!important}
+
+@media(max-width:850px){.sama-footer .container{grid-template-columns:repeat(2,minmax(0,1fr))!important;column-gap:38px!important;row-gap:38px!important}.sama-footer .footer-group a{font-size:.95rem}.sama-footer .footer-contact-list a{font-size:.95rem}.sama-footer .footer-hours-list div{font-size:.78rem;flex-direction:column;gap:2px}.sama-footer .footer-hours-list strong{text-align:left!important}}
+@media(max-width:600px){.location-grid{padding-top:28px!important}.location-details{margin-bottom:24px!important}.location-details::before{width:46px!important;height:46px!important;font-size:26px!important;margin-bottom:16px!important}.location-map{height:430px!important}.sama-footer .container{grid-template-columns:repeat(2,minmax(0,1fr))!important;column-gap:22px!important;row-gap:34px!important}.sama-footer .footer-brand-mark{grid-column:1/-1!important}.sama-footer .footer-group h3,.sama-footer .footer-contact-block h3,.sama-footer .footer-hours-block h3{font-size:1.2rem!important;margin-bottom:22px!important}.sama-footer .footer-group a{font-size:.86rem!important;margin-bottom:17px!important}.sama-footer .footer-contact-list{gap:14px!important}.sama-footer .footer-contact-list a{font-size:.82rem!important;gap:10px!important;align-items:flex-start!important}.sama-footer .footer-contact-list svg{width:20px!important;height:20px!important;flex:none!important}.sama-footer .footer-hours-list{gap:9px!important}.sama-footer .footer-hours-list div{font-size:.72rem!important;line-height:1.35!important}.sama-footer .footer-hours-status{font-size:.68rem!important;line-height:1.45!important}.sama-footer .footer-bottom{grid-column:1/-1!important}.sama-footer .footer-bottom p,.sama-footer .footer-bottom span{font-size:.76rem!important}}
