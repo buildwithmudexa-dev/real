@@ -53,9 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeFix = document.createElement('style');
   themeFix.id = 'sama-theme-fix';
   themeFix.textContent = `
-    .site-header, .site-header .header-inner { background: transparent !important; box-shadow: none !important; border: 0 !important; }
-    .site-header .navbar-controls-v2 { background: transparent !important; box-shadow: none !important; border-color: transparent !important; }
-    .site-header .navbar-controls-v2 .nav-icon-btn { background: transparent !important; box-shadow: none !important; }
+    /* Navbar controls now sit directly over the hero/banner image with no background container. */
+    .site-header{position:absolute!important;top:0!important;left:0!important;right:0!important;background:transparent!important;box-shadow:none!important;border:0!important;z-index:100!important}
+    .site-header .header-inner{height:100px!important;max-width:100%!important;width:100%!important;padding:22px 46px!important;display:flex!important;align-items:center!important;background:transparent!important;box-shadow:none!important;border:0!important}
+    .site-header .logo{position:relative!important;z-index:101!important;margin:0!important;width:126px!important;height:154px!important;flex:0 0 126px!important;background:transparent!important}
+    .site-header .navbar-controls-v2{position:relative!important;z-index:101!important;margin:0 0 0 auto!important;background:transparent!important;box-shadow:none!important;border:0!important;padding:0!important;min-width:0!important;height:auto!important;gap:10px!important}
+    .site-header .navbar-controls-v2 .nav-icon-btn{background:transparent!important;box-shadow:none!important;border:0!important;color:#fff!important;width:48px!important;height:48px!important}
+    .site-header .navbar-controls-v2 .language-btn{color:#59a9ff!important}
+    .site-header .navbar-controls-v2 .nav-icon-btn:hover,.site-header .navbar-controls-v2 .nav-icon-btn:focus-visible{background:rgba(255,255,255,.12)!important;box-shadow:none!important}
+    .site-header .navbar-controls-v2 .theme-dropdown,.site-header .navbar-controls-v2 .language-dropdown{top:calc(100% + 8px)!important;background:#fff!important;border:1px solid #e5e7eb!important;box-shadow:0 14px 35px rgba(0,0,0,.18)!important}
     html[data-theme="dark"] body,html[data-theme="dark"] main,html[data-theme="dark"] .section,html[data-theme="dark"] .about,html[data-theme="dark"] .location-section,html[data-theme="dark"] .hours-section{background:#000!important;color:#f3f4f6!important}
     html[data-theme="dark"] .section-muted{background:#080808!important}
     html[data-theme="dark"] .property-card,html[data-theme="dark"] .location-details,html[data-theme="dark"] .hours-grid>div{background:#111!important;color:#f3f4f6!important;border-color:#2b2b2b!important}
@@ -68,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     html[data-theme="dark"] .mobile-nav-panel{background:#050505!important;color:#f3f4f6!important}
     html[data-theme="dark"] .mobile-nav-links a{color:#f3f4f6!important}
     html[data-theme="dark"] .theme-dropdown,html[data-theme="dark"] .language-dropdown{background:#20242a!important}
+    @media(max-width:850px){.site-header .header-inner{height:80px!important;padding:16px 28px!important}.site-header .logo{width:94px!important;height:116px!important}.site-header .navbar-controls-v2{gap:4px!important}.site-header .navbar-controls-v2 .nav-icon-btn{width:42px!important;height:42px!important}}
+    @media(max-width:600px){.site-header .header-inner{height:70px!important;padding:12px 18px!important}.site-header .logo{width:72px!important;height:88px!important}.site-header .navbar-controls-v2{gap:0!important}.site-header .navbar-controls-v2 .nav-icon-btn{width:38px!important;height:38px!important}}
   `;
   document.head.appendChild(themeFix);
   window.lucide?.createIcons();
