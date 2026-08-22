@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   document.getElementById('nav-icon-card')?.remove();
+  document.getElementById('mobile-nav-overlay')?.remove();
 
   const card = document.createElement('div');
   card.id = 'nav-icon-card';
@@ -66,55 +67,99 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   applyTheme(localStorage.getItem('sama-theme') || 'system');
 
-  const setThemeMenu = open => {
+  const languageButton = document.getElementById('language-control-v2');
+  const languageDropdown = document.getElementById('language-dropdown-v2');
+  const setThemeMenu = (open) => {
+    if (!themeDropdown) return;
     themeDropdown.hidden = !open;
     themeButton?.setAttribute('aria-expanded', String(open));
   };
+  const setLanguageMenu = (open) => {
+    if (!languageDropdown) return;
+    languageDropdown.hidden = !open;
+    languageButton?.setAttribute('aria-expanded', String(open));
+  };
+
   themeButton?.addEventListener('click', event => {
     event.stopPropagation();
-    setThemeMenu(themeDropdown.hidden);
+    const open = themeDropdown?.hidden !== false;
     setLanguageMenu(false);
+    setThemeMenu(open);
   });
   themeDropdown?.querySelectorAll('[data-theme]').forEach(item => item.addEventListener('click', () => {
     applyTheme(item.dataset.theme);
     setThemeMenu(false);
   }));
 
-  const languageButton = document.getElementById('language-control-v2');
-  const dropdown = document.getElementById('language-dropdown-v2');
-  const setLanguageMenu = open => {
-    dropdown.hidden = !open;
-    languageButton?.setAttribute('aria-expanded', String(open));
-  };
   languageButton?.addEventListener('click', event => {
     event.stopPropagation();
-    setLanguageMenu(dropdown.hidden);
+    const open = languageDropdown?.hidden !== false;
     setThemeMenu(false);
+    setLanguageMenu(open);
   });
-  dropdown?.querySelectorAll('[data-lang]').forEach(item => item.addEventListener('click', () => {
+  languageDropdown?.querySelectorAll('[data-lang]').forEach(item => item.addEventListener('click', () => {
     applyLanguage(item.dataset.lang);
     setLanguageMenu(false);
   }));
+
+  /* Real mobile menu: created dynamically so the hamburger works on every page. */
+  const overlay = document.createElement('div');
+  overlay.id = 'mobile-nav-overlay';
+  overlay.className = 'mobile-nav-overlay';
+  overlay.innerHTML = `
+    <div class="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+      <button class="mobile-nav-close" type="button" aria-label="Close menu"><i data-lucide="x"></i></button>
+      <nav class="mobile-nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About SAMA</a>
+        <a href="#services">Services</a>
+        <a href="#location">Find Us</a>
+        <a href="#contact">Contact</a>
+        <a href="blog.html">Blog</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="testimonials.html">Testimonials</a>
+      </nav>
+    </div>`;
+  document.body.appendChild(overlay);
+
+  const menuButton = document.getElementById('menu-control-v2');
+  const closeButton = overlay.querySelector('.mobile-nav-close');
+  const closeMenu = () => {
+    overlay.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    menuButton?.setAttribute('aria-label', 'Open menu');
+    menuButton?.setAttribute('title', 'Menu');
+    if (menuButton) menuButton.innerHTML = '<i data-lucide="menu"></i>';
+    window.lucide?.createIcons();
+  };
+  const openMenu = () => {
+    setThemeMenu(false);
+    setLanguageMenu(false);
+    overlay.classList.add('open');
+    document.body.classList.add('menu-open');
+    menuButton?.setAttribute('aria-expanded', 'true');
+    menuButton?.setAttribute('aria-label', 'Close menu');
+    menuButton?.setAttribute('title', 'Close menu');
+    if (menuButton) menuButton.innerHTML = '<i data-lucide="x"></i>';
+    window.lucide?.createIcons();
+    closeButton?.focus();
+  };
+  menuButton?.addEventListener('click', () => overlay.classList.contains('open') ? closeMenu() : openMenu());
+  closeButton?.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', event => { if (event.target === overlay) closeMenu(); });
+  overlay.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
   document.addEventListener('click', event => {
     if (!event.target.closest('.theme-control-wrap')) setThemeMenu(false);
     if (!event.target.closest('.language-control-wrap')) setLanguageMenu(false);
   });
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') { setThemeMenu(false); setLanguageMenu(false); }
-  });
-
-  const menuButton = document.getElementById('menu-control-v2');
-  const mobileMenu = document.getElementById('mobile-menu');
-  menuButton?.addEventListener('click', () => {
-    if (!mobileMenu) return;
-    const open = mobileMenu.classList.toggle('open');
-    document.body.classList.toggle('menu-open', open);
-    menuButton.setAttribute('aria-expanded', String(open));
-    menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    menuButton.setAttribute('title', open ? 'Close menu' : 'Menu');
-    menuButton.innerHTML = `<i data-lucide="${open ? 'x' : 'menu'}"></i>`;
-    window.lucide?.createIcons();
+    if (event.key === 'Escape') {
+      setThemeMenu(false);
+      setLanguageMenu(false);
+      if (overlay.classList.contains('open')) closeMenu();
+    }
   });
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => {
