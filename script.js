@@ -126,4 +126,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Mobile/location and footer polish fixes. Kept here so the fix applies to the live
+  // page without changing the existing HTML structure.
+  const fixStyle = document.createElement('style');
+  fixStyle.id = 'sama-mobile-polish';
+  fixStyle.textContent = `
+    .location-actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch!important}
+    .location-actions .btn{min-width:0!important;overflow:hidden!important;white-space:nowrap!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;line-height:1.2!important;padding:14px 10px!important}
+    .location-actions .btn svg{width:18px!important;height:18px!important;flex:0 0 auto!important}
+    .footer-brand-mark{display:flex!important;align-items:flex-start!important}
+    .footer-brand-mark img{width:56px!important;max-width:56px!important;height:auto!important;object-fit:contain!important}
+    @media(max-width:850px){
+      .location-actions{grid-template-columns:1fr 1fr!important}
+      .location-actions .btn:first-child{grid-column:1/-1!important}
+    }
+    @media(max-width:600px){
+      .location-actions{grid-template-columns:1fr!important;gap:0!important}
+      .location-actions .btn:first-child{grid-column:auto!important}
+      .location-actions .btn{width:100%!important;min-height:54px!important;white-space:normal!important;font-size:.66rem!important;padding:13px 10px!important}
+      .footer-brand-mark img{width:48px!important;max-width:48px!important}
+    }
+    @media(max-width:380px){.footer-brand-mark img{width:44px!important;max-width:44px!important}}
+  `;
+  document.head.appendChild(fixStyle);
 });
