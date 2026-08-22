@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeFix = document.createElement('style');
   themeFix.id = 'sama-theme-fix';
   themeFix.textContent = `
-    .site-header { background: transparent !important; box-shadow: none !important; border-bottom: 0 !important; }
-    .site-header .header-inner { background: transparent !important; }
+    .site-header, .site-header .header-inner { background: transparent !important; box-shadow: none !important; border: 0 !important; }
+    .site-header .navbar-controls-v2 { background: transparent !important; box-shadow: none !important; border-color: transparent !important; }
+    .site-header .navbar-controls-v2 .nav-icon-btn { background: transparent !important; box-shadow: none !important; }
     html[data-theme="dark"] body,html[data-theme="dark"] main,html[data-theme="dark"] .section,html[data-theme="dark"] .about,html[data-theme="dark"] .location-section,html[data-theme="dark"] .hours-section{background:#000!important;color:#f3f4f6!important}
     html[data-theme="dark"] .section-muted{background:#080808!important}
     html[data-theme="dark"] .property-card,html[data-theme="dark"] .location-details,html[data-theme="dark"] .hours-grid>div{background:#111!important;color:#f3f4f6!important;border-color:#2b2b2b!important}
