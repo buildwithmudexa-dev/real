@@ -1,11 +1,15 @@
 @import url("style-base.css");
 
-/* SAMA brand logo — rebuilt from the supplied logo reference, with transparent background. */
+/* SAMA brand logo — clean transparent logo recreated from the supplied reference. */
 .logo{gap:0;width:178px;height:48px;display:flex;align-items:center;flex:0 0 178px}
 .logo-mark{display:block;width:100%;height:100%;border:0;background:url("assets/sama-united-logo.svg") center left / contain no-repeat;font-size:0;letter-spacing:0}
 .logo-mark::before,.logo-mark::after{content:none}
 .logo>span:last-child{display:none}
 
+/* Footer uses the same transparent SAMA logo; no old text logo. */
+.sama-footer .container::before{content:"";display:block;width:205px;height:68px;margin:0 0 48px;background:url("assets/sama-united-logo.svg") left center / contain no-repeat}
+
 @media (max-width:600px){
   .logo{width:148px;height:42px;flex-basis:148px}
+  .sama-footer .container::before{width:175px;height:58px;margin-bottom:38px}
 }
