@@ -1,2 +1,2 @@
 @import url("style-base.css");
-.logo{gap:12px}.logo-sama-text{display:inline-block!important;color:#1677e8!important;font-size:1.35rem!important;font-weight:800!important;letter-spacing:.08em!important;line-height:1!important;text-shadow:0 1px 2px rgba(0,0,0,.08)}@media(max-width:600px){.logo{gap:8px}.logo-sama-text{font-size:1.05rem!important}}
+.logo{gap:12px}.logo-mark{border:0!important}.logo-sama-text{display:inline-block!important;color:#1677e8!important;font-size:1.35rem!important;font-weight:800!important;letter-spacing:.08em!important;line-height:1!important;text-shadow:0 1px 2px rgba(0,0,0,.08)}@media(max-width:600px){.logo{gap:8px}.logo-sama-text{font-size:1.05rem!important}}
