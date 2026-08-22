@@ -137,14 +137,31 @@ document.addEventListener('DOMContentLoaded', () => {
     .location-actions .btn svg{width:18px!important;height:18px!important;flex:0 0 auto!important}
     .footer-brand-mark{display:flex!important;align-items:flex-start!important}
     .footer-brand-mark img{width:56px!important;max-width:56px!important;height:auto!important;object-fit:contain!important}
+
+    /* Premium contact actions above the footer */
+    .contact-cta .hero-actions{display:grid!important;grid-template-columns:repeat(3,minmax(150px,1fr))!important;gap:10px!important;width:min(620px,100%)!important;margin:0!important}
+    .contact-cta .hero-actions .btn{min-height:68px!important;width:100%!important;padding:14px 18px!important;border-radius:0!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:10px!important;font-size:.68rem!important;font-weight:700!important;letter-spacing:.04em!important;text-transform:uppercase!important;line-height:1.2!important;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease!important}
+    .contact-cta .hero-actions .btn svg{width:19px!important;height:19px!important;flex:0 0 auto!important;stroke-width:1.8!important}
+    .contact-cta .hero-actions .btn-light{border:1px solid #f3f0e8!important;box-shadow:0 10px 28px rgba(0,0,0,.12)!important}
+    .contact-cta .hero-actions .btn-outline-light{border:1px solid rgba(243,240,232,.72)!important;background:rgba(7,29,45,.30)!important;box-shadow:0 10px 28px rgba(0,0,0,.10)!important}
+    .contact-cta .hero-actions .btn:hover{transform:translateY(-3px)!important;box-shadow:0 14px 32px rgba(0,0,0,.22)!important}
+    .contact-cta .hero-actions .btn-outline-light:hover{background:rgba(243,240,232,.12)!important;border-color:#fff!important}
+    .contact-cta .hero-actions .btn-light:hover{background:#fff!important}
+    .contact-cta .hero-actions .btn:nth-child(2) svg{color:#4ee0bd!important}
+    .contact-cta .hero-actions .btn:nth-child(3) svg{color:#c7a96f!important}
+
     @media(max-width:850px){
       .location-actions{grid-template-columns:1fr 1fr!important}
       .location-actions .btn:first-child{grid-column:1/-1!important}
+      .contact-cta .hero-actions{grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important}
+      .contact-cta .hero-actions .btn{min-height:64px!important;padding:12px 8px!important;font-size:.59rem!important}
     }
     @media(max-width:600px){
       .location-actions{grid-template-columns:1fr!important;gap:0!important}
       .location-actions .btn:first-child{grid-column:auto!important}
       .location-actions .btn{width:100%!important;min-height:54px!important;white-space:normal!important;font-size:.66rem!important;padding:13px 10px!important}
+      .contact-cta .hero-actions{grid-template-columns:1fr!important;gap:8px!important;width:100%!important}
+      .contact-cta .hero-actions .btn{min-height:56px!important;width:100%!important;font-size:.62rem!important;padding:12px 16px!important}
       .footer-brand-mark img{width:48px!important;max-width:48px!important}
     }
     @media(max-width:380px){.footer-brand-mark img{width:44px!important;max-width:44px!important}}
